@@ -103,16 +103,6 @@ class Face_Recognition_System:
         b1_1 = Button(bg_img,text="Attendences",cursor="hand2",command=self.attendance_data,font=("times new roman",15,"bold"),bg="darkblue",fg="white")
         b1_1.place(x=700,y=250,width=220,height=40)
 
-        #  # Help Desk button 
-        # img8 = Image.open(r"D:\face2\images\8.jpg")
-        # img8 = img8.resize((220,190),Image.ANTIALIAS)
-        # self.photoimg8= ImageTk.PhotoImage(img8)
-
-        # b1 = Button(bg_img,image=self.photoimg8)
-        # b1.place(x =1000,y=75,width=220,height=190)
-
-        # b1_1 = Button(bg_img,text="Help Desk",cursor="hand2",font=("times new roman",15,"bold"),bg="darkblue",fg="white")
-        # b1_1.place(x=1000,y=250,width=220,height=40)
 
         # Help Desk button 
         img8 = Image.open(r"D:\face2\images\9.jpg")
@@ -222,12 +212,6 @@ class Face_Recognition_System:
         self.app=Help(self.new_window)
 
     
-
-      
-
-
- 
-
 
 
 

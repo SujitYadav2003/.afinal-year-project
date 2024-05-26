@@ -532,44 +532,6 @@ class Student:
 
         #                             ================= new function adding using tut ========================
 
-    # def search(self):
-    #     conn=mysql.connector.connect(host="localhost",username="root",password="4381",database="today")
-    #     my_cursor=conn.cursor()
-
-    #     my_cursor.execute("select * from student where "+str(self.search_var.get()) + " Like '% "+str(self.txt_search.get())+"%'")
-    #     # chatgpt code
-    #     # my_cursor.execute("SELECT * FROM student WHERE `" + str(self.search_var.get()) + "` LIKE '%" + str(self.txt_search.get()) + "%'")
-
-    #     rows = my_cursor.fetchall()
-    #     if len(rows)!=0:
-    #         self.student_table.delete(*self.student_table.get_children())
-    #         for i in rows:
-    #             self.student_table.insert("",END,values=i)
-    #         conn.commit()
-    #     conn.close()
-
-
-
-#@       Running Code of Searchs
-    # def search(self):
-    #  conn = mysql.connector.connect(host="localhost", username="root", password="4381", database="today")
-    #  my_cursor = conn.cursor()
-
-    #  search_column = self.search_var.get()
-    #  search_value = self.txt_search.get()
-
-    # # Using parameterized query to avoid SQL injection
-    #  query = "SELECT * FROM student WHERE {} LIKE %s".format(search_column)
-    #  my_cursor.execute(query, ('%' + search_value + '%',))
-
-    #  rows = my_cursor.fetchall()
-    #  if len(rows) != 0:
-    #     self.student_table.delete(*self.student_table.get_children())
-    #     for i in rows:
-    #         self.student_table.insert("", END, values=i)
-    #     conn.commit()
-
-    #  conn.close()
 
 
 # trying somthing new 
@@ -697,83 +659,6 @@ class Student:
             except Exception as es:
                 messagebox.showerror("Error", f"Due to: {str(es)}", parent=self.root)
 
-
-
-
-
-
-#     def generate_dataset(self):
-#         if self.var_dep.get() == "Select Department" or self.var_std_name.get() == "" or self.var_std_id.get() == "":
-#             messagebox.showerror("Error", "All fields are required", parent=self.root)
-#         else:
-#             try:
-#                 conn = mysql.connector.connect(host="localhost", username="root", password="4381", database="today")
-#                 my_cursor = conn.cursor()
-#                 my_cursor.execute("select * from student")
-#                 myresult = my_cursor.fetchall()
-#                 id = len(myresult) + 1  # Get the next ID based on the current count
-
-#                 my_cursor.execute("update student set Dep=%s, course=%s, Year=%s, Semester=%s, Name=%s, Division=%s, Roll=%s, Gender=%s, Dob=%s, Email=%s, Phone=%s, Address=%s, Teacher=%s, PhotoSample=%s where Student_id=%s", (
-#                     self.var_dep.get(),
-#                     self.var_course.get(),
-#                     self.var_year.get(),
-#                     self.var_semester.get(),
-#                     self.var_std_name.get(),
-#                     self.var_div.get(),
-#                     self.var_roll.get(),
-#                     self.var_gender.get(),
-#                     self.var_dob.get(),
-#                     self.var_email.get(),
-#                     self.var_phone.get(),
-#                     self.var_address.get(),
-#                     self.var_teacher.get(),
-#                     self.var_radio1.get(),
-#                     self.var_std_id.get()  # Correctly pass the student ID
-#                 ))
-#                 conn.commit()
-#                 self.fetch_data()
-#                 self.reset_data()
-#                 conn.close()
-
-#                 # Load predefined data on face frontals from OpenCV
-#                 face_classifier = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
-
-#                 def face_cropped(img):
-#                     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-#                     faces = face_classifier.detectMultiScale(gray, 1.3, 5)
-#                     if len(faces) == 0:
-#                         return None
-#                     for (x, y, w, h) in faces:
-#                         return img[y:y+h, x:x+w]
-
-#                 cap = cv2.VideoCapture(0)
-#                 img_id = 0
-#                 while True:
-#                     ret, my_frame = cap.read()
-#                     if face_cropped(my_frame) is not None:
-#                         img_id += 1
-#                         face = cv2.resize(face_cropped(my_frame), (450, 450))
-#                         face = cv2.cvtColor(face, cv2.COLOR_BGR2GRAY)
-#                         file_name_path = "data/user." + str(id) + "." + str(img_id) + ".jpg"
-#                         cv2.imwrite(file_name_path, face)
-#                         cv2.putText(face, str(img_id), (50, 50), cv2.FONT_HERSHEY_COMPLEX, 2, (0, 255, 0), 2)
-#                         cv2.imshow("Cropped Face", face)
-
-#                     if cv2.waitKey(1) == 13 or int(img_id) == 100:
-#                         break
-#                 cap.release()
-#                 cv2.destroyAllWindows()
-#                 messagebox.showinfo("Result", "Generating data set completed!!!", parent=self.root)
-#             except Exception as es:
-#                 messagebox.showerror("Error", f"Due to: {str(es)}", parent=self.root)
-
-#     # def fetch_data(self):
-#     #     # Implementation for fetching data from the database
-#     #     pass
-
-#     # def reset_data(self):
-#     #     # Implementation for resetting the form fields
-#     #     pass
 
 if __name__ == "__main__":
     root = Tk()
